@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Chat Dashboard</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="role-box">
+      <strong>Access Mode:</strong>
+      <select id="roleSelect">
+        <option value="agent">Agent View</option>
+        <option value="admin">Admin View</option>
+      </select>
+    </div>
+
+    <h3>Active Chats</h3>
+    <div id="chatList">
+      <div class="chat-item assigned-me" data-id="1023">
+        <strong>Vendor #1023</strong><br>
+        <small class="text-green">Assigned to you</small>
+      </div>
+      <div class="chat-item assigned-other" data-id="1041">
+        <strong>Vendor #1041</strong><br>
+        <small class="text-gray">Assigned to Agent B</small>
+      </div>
+    </div>
+
+    <div class="profile-trigger" id="profileTrigger">
+      <img id="sidebarAvatar" src="https://i.pravatar.cc/150?u=ines" alt="Profile">
+      <div>
+        <div id="sidebarDisplayName" class="font-bold">Ines U.</div>
+        <div id="pendingBadge" class="pending-badge">Update Pending</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-area">
+    <div id="adminApprovalBar" class="approval-bar">
+      <span><strong>Profile Update Request</strong></span>
+      <div>
+        <button id="approveBtn" class="btn-green">Approve</button>
+        <button id="rejectBtn" class="btn-black-outline">Reject</button>
+      </div>
+    </div>
+
+    <div class="chat-header">
+      <div>
+        <strong id="chatTitle" class="header-title">Vendor #1023</strong>  
+        <span class="status-tag">OPEN</span>
+        <div id="chatInfo" class="chat-meta">ID: 1023 | Assigned: Ines Uhazaki</div>
+      </div>
+    </div>
+
+    <div class="messages" id="messages">
+      </div>
+
+    <div class="chat-input" id="chatInput">
+      <input type="text" id="msgInput" placeholder="Type your message..." />
+      <button id="sendBtn" class="btn-green">Send</button>
+    </div>
+  </div>
+
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">My Profile</h2>
+      
+      <label><small>Agent ID (Locked)</small></label>
+      <input type="text" id="agentIdField" class="locked-field" readonly />
+
+      <label><small>Full Name (Locked)</small></label>
+      <input type="text" id="fullNameField" class="locked-field" readonly />
+
+      <label><small>Display Name (Public)</small></label>
+      <input type="text" id="editDisplayName" placeholder="e.g. Ines U." />
+
+      <label><small>Avatar Image URL</small></label>
+      <input type="text" id="editAvatarUrl" placeholder="https://..." />
+
+      <div class="modal-actions">
+        <button id="submitProfileBtn" class="btn-green flex-1">Request Update</button>
+        <button id="closeModalBtn" class="btn-white-outline flex-1">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
