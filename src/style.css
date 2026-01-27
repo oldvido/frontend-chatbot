@@ -1,0 +1,119 @@
+:root {
+  /* Colors extracted from the dashboard and checkout UI */
+  --action-green: #28a745;  
+  --warning-orange: #d97706; 
+  --primary-black: #1a1a1a;  
+  
+  --bg-main: #f8fafc;
+  --border-subtle: #e2e8f0;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: var(--bg-main);
+  color: var(--primary-black);
+}
+
+/* Sidebar structure */
+.sidebar {
+  width: 300px;
+  border-right: 1px solid var(--border-subtle);
+  padding: 20px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.role-box {
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary-black);
+  margin-bottom: 20px;
+}
+
+/* Chat items in sidebar */
+.chat-item {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+  background: var(--white);
+  transition: all 0.2s ease;
+}
+
+.assigned-me {
+  border-left: 6px solid var(--action-green);
+  background: #f0fdf4;
+}
+
+.assigned-other {
+  border-left: 6px solid #94a3b8;
+  opacity: 0.7;
+}
+
+/* Profile Footer */
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 12px;
+  background: var(--primary-black);
+  color: var(--white);
+  margin-top: auto;
+}
+
+.profile-trigger img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--action-green);
+  object-fit: cover;
+}
+
+/* Chat Bubble Styling */
+.messages {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+  background: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.message {
+  padding: 14px 18px;
+  border-radius: 15px;
+  max-width: 70%;
+  display: flex;
+  gap: 14px;
+}
+
+.agent-msg {
+  background: var(--primary-black);
+  color: white;
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.customer-msg {
+  background: var(--white);
+  align-self: flex-start;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Buttons */
+.btn-green { background: var(--action-green); color: white; }
+.btn-orange { background: var(--warning-orange); color: white; }
+
+.locked-field {
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: not-allowed;
+}
