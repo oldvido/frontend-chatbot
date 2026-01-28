@@ -55,8 +55,7 @@
       </div>
     </div>
 
-    <div class="messages" id="messages">
-      </div>
+    <div class="messages" id="messages"></div>
 
     <div class="chat-input" id="chatInput">
       <input type="text" id="msgInput" placeholder="Type your message..." />
@@ -67,26 +66,21 @@
   <div id="profileModal" class="modal">
     <div class="modal-content">
       <h2 class="modal-title">My Profile</h2>
-      
       <label><small>Agent ID (Locked)</small></label>
       <input type="text" id="agentIdField" class="locked-field" readonly />
-
       <label><small>Full Name (Locked)</small></label>
       <input type="text" id="fullNameField" class="locked-field" readonly />
-
-      <label><small>Display Name (Public)</small></label>
-      <input type="text" id="editDisplayName" placeholder="e.g. Ines U." />
-
-      <label><small>Avatar Image URL</small></label>
-      <input type="text" id="editAvatarUrl" placeholder="https://..." />
-
+      <label><small>Display Name</small></label>
+      <input type="text" id="editDisplayName" />
+      <label><small>Avatar URL</small></label>
+      <input type="text" id="editAvatarUrl" />
       <div class="modal-actions">
-        <button id="submitProfileBtn" class="btn-green flex-1">Request Update</button>
-        <button id="closeModalBtn" class="btn-white-outline flex-1">Close</button>
+        <button id="submitProfileBtn" class="btn-green">Request Update</button>
+        <button id="closeModalBtn" class="btn-black-outline">Close</button>
       </div>
     </div>
   </div>
 
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
